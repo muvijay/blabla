@@ -1,0 +1,76 @@
+body {
+    background-image: url('/static/bg1.jpg');
+    background-size: cover;
+}
+.svg_icon {
+    font-size: 2rem;
+    padding-right: 5vw;
+}
+#smile {
+    color: rgb(173, 250, 110);
+}
+#sad {
+    color: darksalmon;
+}
+.buttonscol {
+    display: flex;
+    flex-direction: column;
+}
+.box {
+    height: 1em;
+    margin: .8em;
+    vertical-align: middle;
+    font-size: 1em;
+}
+
+.container{
+    background-color: rgba(255, 255, 255, 0.959);
+}
+
+#msg {
+    background-color: rgba(255, 255, 255, 0.959);
+}
+
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    /* Stay in place */
+    z-index: 5;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    background-image: url('/static/popup1.jpg');
+    background-color: rgb(0, 0, 0);
+    /* Black fallback color */
+    background-color: rgba(0, 0, 0);
+    /* Black w/opacity */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.1s;
+    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 458px;
+    left: 165px;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
