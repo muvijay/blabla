@@ -1,8 +1,6 @@
-from random import random
 from flask import Blueprint
 from flask import Flask, render_template, url_for, redirect, request, session, jsonify, flash, Blueprint
 from .database import DataBase
-import netifaces as nif
 from faker import Faker
 
 view = Blueprint("views", __name__)
