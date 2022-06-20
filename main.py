@@ -2,7 +2,6 @@ from flask_socketio import SocketIO
 from application import create_app
 from application.database import DataBase
 import config
-import netifaces
 from flask import redirect, url_for
 # from apscheduler.schedulers.background import BackgroundScheduler
 import application.views as views
