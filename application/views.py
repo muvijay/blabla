@@ -43,8 +43,8 @@ def logout():
     return redirect(url_for("views.login"))
 
 
-@view.route("/")
-@view.route("/home")
+@view.route("/", methods=["POST", "GET"])
+@view.route("/home", methods=["POST", "GET"])
 def home():
     """
     displays home page if logged in
@@ -59,7 +59,7 @@ def home():
 
     return render_template("index.html", **{"session": session})
 
-@view.route("/get_name")
+@view.route("/get_name", methods=["POST", "GET"])
 def get_name():
     """
     :return: a json object storing name of logged in user
@@ -70,7 +70,7 @@ def get_name():
     return jsonify(data)
 
 
-@view.route("/get_messages")
+@view.route("/get_messages", methods=["POST", "GET"])
 def get_messages():
     """
     :return: all messages stored in database
@@ -82,7 +82,7 @@ def get_messages():
 
     return jsonify(messages)
 
-@view.route("/clear_message/<int:id>")
+@view.route("/clear_message/<int:id>", methods=["POST", "GET"])
 def clear_message(id):
     db = DataBase()
     db.delete_message(id=id)
